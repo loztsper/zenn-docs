@@ -3,7 +3,7 @@ title: "依存関係を検証してコードの秩序を保とう"
 emoji: "🧐"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["javascript","react"]
-published: false
+published: true
 ---
 
 今回は以下のような困りごとを解決するための一手段を紹介します。  
@@ -11,8 +11,6 @@ published: false
   - 例: atomsからmoleculesやorganismsをimport
 - 特定のライブラリを使用していないかどうかを検証したい
 - 循環参照をしてしまっていないか検証したい
-
-などなど...
 
 ## 依存関係を検証する
 [dependency-cruiser](https://github.com/sverweij/dependency-cruiser)を使用して検証していきます。
@@ -87,7 +85,7 @@ module.exports = {
 :::message alert
 node_modules内部を対象に含めるため動作が重くなります。
 :::
-上記のルールを、あるライブラリの特定の関数のみに適用させたい場合のルールを以下に記載します。
+上記のルールをあるライブラリの特定の関数のみに適用させたい場合について記載します。
 
 ```javascript
 module.exports = {
