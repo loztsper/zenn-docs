@@ -3,7 +3,7 @@ title: "イベントハンドラ内のerrorをError Boundaryでcatchさせる"
 emoji: "🤗"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["javascript","react"]
-published: false
+published: true
 ---
 
 イベントハンドラ内のthrow Errorを、Error Boundaryにcatchさせてみたくなった際に書いた短いメモ書きです。
@@ -44,7 +44,7 @@ export const useHandler = () => {
 ```
 
 stateをsetする関数の内部で、受け取ったErrorをthrowしています。これによりstateの変更途中にerrorがthrowされることになるため、結果的にError Boundaryがcatchするようになります。  
-しかし、このままではonClickの途中でこのcustom hooksを呼んでいるComponentがunmountしている場合に動作しなくなってしまうため、以下の部分のみをContextとして分離するとより使いやすくなるでしょう。
+このままでは、onClickの途中でこのcustom hooksを呼んでいるComponentがunmountすると動作しなくなってしまうため、以下の部分をContextとして分離すると使用しやすくなるでしょう。
 
 ```typescript
 
