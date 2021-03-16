@@ -1,5 +1,5 @@
 ---
-title: "イベントハンドラ内のerrorをError Boundaryでcatchさせる"
+title: "イベントハンドラ内のerrorをError Boundaryにcatchさせる"
 emoji: "🤗"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["javascript","react"]
